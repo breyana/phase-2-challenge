@@ -3,7 +3,7 @@ module.exports = (date) => {
     throw new Error("Please pass in a Date object")
   }
 
-  var months = [
+  const months = [
     "January", "February", "March",
     "April", "May", "June", "July",
     "August", "September", "October",
