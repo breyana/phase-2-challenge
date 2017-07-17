@@ -10,8 +10,7 @@ describe('Month Function', () => {
   })
   context('Fail Cases', () => {
     it('Throws an error if Date object is not passed through', () => {
-      expect(month("10-30-2017")).to.not.equal("June")
-      expect(month("10-30-2017")).to.throw()
+      expect(() => month("10-30-2017")).to.throw(Error)
     })
   })
 })
