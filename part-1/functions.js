@@ -20,7 +20,15 @@ const reverseSentence = (string) => {
   return stringArray.reverse().join(" ")
 }
 
+const nameProps = (object) => {
+  if (typeof object !== "object") {
+    throw new Error("Please pass in an object")
+  }
+  return Object.keys(object).sort()
+}
+
 module.exports = {
   month,
-  reverseSentence
+  reverseSentence,
+  nameProps
 }
