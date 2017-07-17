@@ -1,9 +1,17 @@
+const month = require('./functions')
 const { expect } = require('chai')
 
-describe('', () => {
-  context('', () => {
-    it('', () => {
-      expect(this).to.equal(this)
+describe('Month Function', () => {
+  context('Passing Tests', () => {
+    it('Returns the month of a given Date', () => {
+      let date = new Date(2017, 5, 19)
+      expect(month(date)).to.equal("June")
+    })
+  })
+  context('Fail Cases', () => {
+    it('Throws an error if Date object is not passed through', () => {
+      expect(month("10-30-2017")).to.not.equal("June")
+      expect(month("10-30-2017")).to.throw()
     })
   })
 })
