@@ -2,7 +2,7 @@ const {
   month,
   reverseSentence,
   nameProps,
-  filterBetween 
+  filterBetween
 } = require('./functions')
 const { expect } = require('chai')
 

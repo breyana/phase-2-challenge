@@ -27,8 +27,18 @@ const nameProps = (object) => {
   return Object.keys(object).sort()
 }
 
+const filterBetween = (array, min, max) => {
+  if (!Array.isArray(array)) {
+    throw new Error("Please pass in an array")
+  }
+  return array.filter(word => {
+    return word > min && word < max
+  })
+}
+
 module.exports = {
   month,
   reverseSentence,
-  nameProps
+  nameProps,
+  filterBetween
 }
