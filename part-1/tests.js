@@ -1,4 +1,9 @@
-const { month, reverseSentence, nameProps } = require('./functions')
+const {
+  month,
+  reverseSentence,
+  nameProps,
+  filterBetween 
+} = require('./functions')
 const { expect } = require('chai')
 
 describe('Month Function', () => {
@@ -46,6 +51,23 @@ describe('Names of Properties Function', () => {
     it('Throws an error if an object is not passed through', () => {
       expect(() => nameProps("Here are some properties"))
         .to.throw("Please pass in an object")
+    })
+  })
+})
+
+describe('Filter Between Function', () => {
+  context('Expected Behavior', () => {
+    it('Filters an array of words that fit alphabetically in between two given words', () => {
+      let arr = ['dog', 'cat', 'zebra', 'ape', 'lion', 'cow']
+      expect(filterBetween(arr, 'deer', 'giraffe')).to.eql(['dog'])
+      expect(filterBetween(arr, 'chimp', 'lobster')).to.eql(['dog', 'lion', 'cow'])
+      expect(filterBetween(arr, 'chickadee', 'chimpanzee')).to.eql([])
+    })
+  })
+  context('Fail Cases', () => {
+    it('Throws an error if an object is not passed through', () => {
+      expect(() => filterBetween("Here is an array"))
+        .to.throw("Please pass in an array")
     })
   })
 })
