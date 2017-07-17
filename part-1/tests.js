@@ -1,5 +1,5 @@
 const { month } = require('./functions')
-const { expect } = require('chai')
+const { expect, reverseSentence } = require('chai')
 
 describe('Month Function', () => {
   context('Expected Behavior', () => {
@@ -11,6 +11,19 @@ describe('Month Function', () => {
   context('Fail Cases', () => {
     it('Throws an error if Date object is not passed through', () => {
       expect(() => month("10-30-2017")).to.throw(Error)
+    })
+  })
+})
+
+describe('Reverse A Sentence Function', () => {
+  context('Expected Behavior', () => {
+    it('Reverses a given sentence', () => {
+      expect(reverseSentence("Hello, this is dog.")).to.equal("dog. is this Hello,")
+    })
+  })
+  context('Fail Cases', () => {
+    it('Throws an error if a string is not passed through', () => {
+      expect(() => reverseSentence(new Date())).to.throw(Error)
     })
   })
 })
