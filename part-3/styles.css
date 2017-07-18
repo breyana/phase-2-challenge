@@ -5,6 +5,19 @@ header {
   margin-bottom: 10px;
 }
 
+a {
+  display: block;
+}
+
+main {
+  float: left;
+  width: 75%;
+}
+
+h1 {
+  margin-top: 0;
+}
+
 .categories {
   background-color: #555
 }
@@ -21,15 +34,15 @@ header {
   justify-content: space-between;
 }
 
-a {
-  display: block;
+.movie-list > div {
+    display: flex;
+    justify-content: space-around;
 }
 
-main {
-  float: left;
-  width: 75%;
+.movie-details {
+  width: 400px;
 }
 
-h1 {
-  margin-top: 0;
+.movie-details > button {
+  margin: 20px;
 }
